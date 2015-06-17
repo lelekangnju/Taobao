@@ -107,10 +107,10 @@ public class General {
 	
 	
 	
+
 	
 	
-	
-	public static void printCalDataBeanTwoFiles(DialogBean tempdialogbean, CalDataBean CDBJCoding, String otherinfo, String datacollector, String realname){
+	public static void printCalDataBeanTwoFiles(DialogBean tempdialogbean, CalDataBean CDBJCoding, String otherinfo, String datacollector, String realname, String tmprandomstring){
 		  String printpathYes = "E:/Lele/Taobao/datalogCalDataBeanYes.txt";
 	  	  String printpathNo  = "E:/Lele/Taobao/datalogCalDataBeanNo.txt";
 	  	  
@@ -156,8 +156,8 @@ public class General {
 	  	  //输出
 		  if(CDBJCoding.isPurchaseornot()){//有相应的购买记录
 		  //打印demographicinformation
-		  WriteStreamAppend.method1(printpathYes,CDBJCoding.getRandomString());
-		  WriteStreamAppend.method1(printpathYes,d.getCollector());
+		  WriteStreamAppend.method1(printpathYes,tmprandomstring);
+		  WriteStreamAppend.method1(printpathYes,"#"+d.getCollector());
 		  WriteStreamAppend.method1(printpathYes,"#"+d.getRealName());
 		  WriteStreamAppend.method1(printpathYes,"#"+d.getSex());
 		  WriteStreamAppend.method1(printpathYes,"#"+d.getAge());
@@ -297,8 +297,8 @@ public class General {
 	  	  */
 	  		 WriteStreamAppend.method1(printpathYes,"\r\n");
 		  }else{
-			  WriteStreamAppend.method1(printpathNo,CDBJCoding.getRandomString());
-			  WriteStreamAppend.method1(printpathNo,d.getCollector());
+			  WriteStreamAppend.method1(printpathNo,tmprandomstring);
+			  WriteStreamAppend.method1(printpathNo,"#"+d.getCollector());
 			  WriteStreamAppend.method1(printpathNo,"#"+d.getRealName());
 			  WriteStreamAppend.method1(printpathNo,"#"+d.getSex());
 			  WriteStreamAppend.method1(printpathNo,"#"+d.getAge());

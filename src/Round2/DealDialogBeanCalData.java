@@ -6,7 +6,9 @@ import java.util.*;
 
 //这个类用来计算那些data，每个dialogbean当中包含的data
 public class DealDialogBeanCalData {
-      public static CalDataBean calculate(DialogBean tempdialogbean){
+      public static CalDataBean calculate(DialogBean tempdialogbean, String RandomString, boolean isfirst){
+    	  
+    	  
     	  
     	  CalDataBean cdb = new CalDataBean();
     	  
@@ -153,6 +155,30 @@ public class DealDialogBeanCalData {
                                                  , General.StringToDate(tempdb[0].getTime()));
 		  cdb.setDuration_time(duration_time);
 		  //买家对话条数c_asks_number，买家对话中的字数c_words_number
+		  //Here I modified the method
+		  /*
+		   * Seller.  public static CalDataBean calculate(DialogBean tempdialogbean, String RandomString, boolean isfirst)
+		   * if isfirst is true, it means that new session, we should print "RandomString"
+		   * String RandomString, this is randomstring.
+		   */
+		  String pathEachLine = "E:/Lele/Taobao/pathEachLine.txt";
+		  if(isfirst){
+			  WriteStreamAppend.method1(pathEachLine,"\r\n");
+			  WriteStreamAppend.method1(pathEachLine,RandomString+"\r\n");
+		  }
+		  for(int i=0;i<tempdb.length;i++){
+			  if(nickname.equals(tempdb[i].getTitle())){
+				  int templele1[]=TestCidian.CalculateEmotionalWords(tempdb[i].getContent());
+				  WriteStreamAppend.method1(pathEachLine,"Line number:"+i+", Buyer: "+ "Buyer_Word_Number [ "+General.delSignBlank(tempdb[i].getContent()).length()+" ]"+" Emotional Words["+templele1[0]+", "+templele1[1] +", "+templele1[2] +", "+templele1[3] 
+						  +", "+templele1[4] +", "+templele1[5] +", "+templele1[6] +", "+templele1[7]+"] " +"\r\n");
+			  }
+			  if(sellertitle.equals(tempdb[i].getTitle())){
+				  int templele2[]=TestCidian.CalculateEmotionalWords(tempdb[i].getContent());
+				  WriteStreamAppend.method1(pathEachLine,"Line number:"+i+", Seller: "+ "Seller_Word_Number [ "+General.delSignBlank(tempdb[i].getContent()).length()+" ]"+" Emotional Words["+templele2[0]+", "+templele2[1] +", "+templele2[2] +", "+templele2[3] 
+						  +", "+templele2[4] +", "+templele2[5] +", "+templele2[6] +", "+templele2[7]+"] " +"\r\n");
+			  }
+		  }
+		  
 		  for(int i=0;i<tempdb.length;i++){
 			  if(nickname.equals(tempdb[i].getTitle())){
 				  c_asks_number++;

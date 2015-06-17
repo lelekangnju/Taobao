@@ -1,4 +1,5 @@
 package Round2;
+import java.text.SimpleDateFormat;
 import java.util.*; 
 
 import Round2.WriteStreamAppend;
@@ -120,13 +121,18 @@ public class DealChatLogContent {
 			   CalDataBean CDBW = new CalDataBean();
 			   int dialogn=0;//记录这一seller name下面有多少不同的dialog
 			   
+			   
+			   String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+			   String nono = String.valueOf(System.nanoTime());
+			   String tmpRandomString = timeStamp + nono;
+			   
 			   long temptime =0 ;
 			   dialogn=everysession.get(i).sellersession.size();
 			   
 			   for(int j=0;j<dialogn;j++){
 				   System.out.println("Session number is "+j);
 				   tempdialogbean=everysession.get(i).sellersession.get(j);
-				   CDBJ = DealDialogBeanCalData.calculate(tempdialogbean);//计算出communication pattern data，将这部分信息加入到CDBJ这个当中
+				   CDBJ = DealDialogBeanCalData.calculate(tempdialogbean,tmpRandomString,true);//计算出communication pattern data，将这部分信息加入到CDBJ这个当中
 				   /*
 				    * Modified the prior method.
 				    * Calculate Each Person's Behavior.
@@ -143,7 +149,7 @@ public class DealChatLogContent {
 						   if(General.delSpaceChineseBiaodian(tempdialogbean.getTradeId()).equalsIgnoreCase(
 							   General.delSpaceChineseBiaodian(tempdialogbean1.getTradeId()))){//三个条件，同一个seller，对话发生在一天内，相同tradeid
 							   
-							   CDBW = DealDialogBeanCalData.calculate(tempdialogbean1);//计算出communication pattern data
+							   CDBW = DealDialogBeanCalData.calculate(tempdialogbean1,tmpRandomString,false);//计算出communication pattern data
 							   CDBW = DealDialogBeanCalData.calculateCoding(tempdialogbean1,CDBW,datacollector,realname);//计算Coding data,经过此步骤处理，CDBW中拥有完全信息
 							   
 							   //2013-1-9 不再输出内层循环，只输出最终结果
@@ -166,7 +172,7 @@ public class DealChatLogContent {
 				   System.out.println("外层循环，没有输出");
 				   
 				   
-				  General.printCalDataBeanTwoFiles(tempdialogbean,CDBJ,"外层循环",datacollector,realname);
+				  General.printCalDataBeanTwoFiles(tempdialogbean,CDBJ,"外层循环",datacollector,realname,tmpRandomString);
 				   
 				   
 				   System.out.println("外层循环，输出完毕");
