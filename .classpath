@@ -2,5 +2,22 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-lang-2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-lang-2.5-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2-bin.zip"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2-tests.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/commons-math3-3.2-test-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/filterbuilder.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/htmllexer.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/htmlparser.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/jxl.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/pinyin4j-2.5.0.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/sitecapturer.jar"/>
+	<classpathentry kind="lib" path="E:/Lele/git/Taobao/Taobao/thumbelina.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
